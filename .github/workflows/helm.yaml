@@ -25,7 +25,7 @@ jobs:
           path: helm-chart-repository
 
       - name: Helm Package
-        run: helm package godaddy-webhook --version "0.1.0+$(git rev-parse --short "$GITHUB_SHA")" -d helm-chart-repository
+        run: helm package ./deploy/helm --version "0.1.0+$(git rev-parse --short "$GITHUB_SHA")" -d helm-chart-repository
 
       - name: Helm Push
         env:
