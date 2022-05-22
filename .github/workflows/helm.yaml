@@ -17,7 +17,7 @@ jobs:
       - name: Helm Repository Checkout
         uses: actions/checkout@v2
         with:
-          repository: yourorg/helm-chart-repository
+          repository: cml-insight/helm-chart-repository
           token: ${{ secrets.DEVOPS_BOT_GH_TOKEN }}
           fetch-depth: 0
           persist-credentials: true
