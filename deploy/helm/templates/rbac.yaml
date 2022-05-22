@@ -14,7 +14,7 @@ metadata:
   name: {{ include "godaddy-webhook.fullname" . }}:webhook-authentication-reader
   namespace: kube-system
   labels:
-{{ include "godaddy-webhook.labels" . | indent 4 }}
+    {{ include "godaddy-webhook.labels" . | indent 4 }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role

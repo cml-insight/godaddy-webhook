@@ -28,21 +28,18 @@ If release name contains chart name it will be used as a full name.
 Create chart name and version as used by the chart label.
 */}}
 {{- define "godaddy-webhook.chart" -}}
-{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
-{{- end -}}
+{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
+{{- end }}
 
 {{/*
 Common labels
 */}}
 {{- define "godaddy-webhook.labels" -}}
-app.kubernetes.io/name: {{ include "godaddy-webhook.name" . }}
-helm.sh/chart: {{ include "godaddy-webhook.chart" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
-{{- end -}}
+{{- end }}
 
 {{/*
 PKI
